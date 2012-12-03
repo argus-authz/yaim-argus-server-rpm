@@ -20,12 +20,12 @@
 name = yaim-argus-server
 version = 1.6.0
 release = 1
-package_name = glite-$(name)
+package_name = yaim-argus_server
 
 git_url = https://github.com/argus-authz/$(name).git
 git_branch = EMI-3
 
-dist_url = https://github.com/downloads/argus-authz/$(name)/$(package_name)-$(version).tar.gz
+dist_url = https://github.com/downloads/argus-authz/$(name)/$(name)-$(version).tar.gz
 spec_file = fedora/$(package_name).spec
 rpmbuild_dir = $(CURDIR)/rpmbuild
 
@@ -45,7 +45,7 @@ spec:
 pre_rpmbuild: spec
 	@echo "Preparing for rpmbuild in $(rpmbuild_dir)"
 	mkdir -p $(rpmbuild_dir)/BUILD $(rpmbuild_dir)/RPMS $(rpmbuild_dir)/SOURCES $(rpmbuild_dir)/SPECS $(rpmbuild_dir)/SRPMS
-	test -f $(rpmbuild_dir)/SOURCES/$(package_name)-$(version).tar.gz || wget -P $(rpmbuild_dir)/SOURCES $(dist_url)
+	test -f $(rpmbuild_dir)/SOURCES/$(name)-$(version).tar.gz || wget -P $(rpmbuild_dir)/SOURCES $(dist_url)
 
 
 srpm: pre_rpmbuild
@@ -65,4 +65,4 @@ git_source:
 	(cd $(name) && git checkout $(git_branch))
 	(cd $(name) && make dist)
 	mkdir -p $(rpmbuild_dir)/SOURCES
-	cp $(name)/$(package_name)-$(version).tar.gz $(rpmbuild_dir)/SOURCES
+	cp $(name)/$(name)-$(version).tar.gz $(rpmbuild_dir)/SOURCES
