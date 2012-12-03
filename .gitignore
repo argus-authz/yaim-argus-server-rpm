@@ -1,0 +1,4 @@
+/rpmbuild
+/*.rpm
+/yaim-argus-server/
+/fedora/*.spec
