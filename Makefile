@@ -22,10 +22,11 @@ version = 1.6.0
 release = 1
 package_name = yaim-argus_server
 
+dist_url = https://github.com/downloads/argus-authz/$(name)/$(name)-$(version).tar.gz
+
 git_url = https://github.com/argus-authz/$(name).git
 git_branch = EMI-3
 
-dist_url = https://github.com/downloads/argus-authz/$(name)/$(name)-$(version).tar.gz
 spec_file = fedora/$(package_name).spec
 rpmbuild_dir = $(CURDIR)/rpmbuild
 
