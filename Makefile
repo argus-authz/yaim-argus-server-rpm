@@ -22,7 +22,7 @@ version = 1.6.0
 release = 1
 package_name = yaim-argus_server
 
-dist_url = https://github.com/downloads/argus-authz/$(name)/$(name)-$(version).tar.gz
+dist_url = http://argus-authz.github.com/$(name)/distrib/$(name)-$(version).tar.gz
 
 git_url = https://github.com/argus-authz/$(name).git
 git_branch = EMI-3
